@@ -41,6 +41,48 @@ $("#leave-reply .form-submit p").text("* Requerido");
 	
 </script>
 
+//add widget with biography
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+//align biography with optin
+var optinWidth = $("div.op_signup_form.op-signup-style-style5").width();
+console.log(optinWidth);
+var categoriesWidth = $("div#text-2 .textwidget").outerWidth();
+console.log(categoriesWidth);
+var difference2 = (categoriesWidth - optinWidth)/2;
+console.log(difference2);
+$("div#text-2").css({ //align the widget with optin
+		    'padding-left': difference2 + 'px'
+		});
+//add image
+$("div#text-2 .textwidget").prepend("<img src = 'http://localhost/adelapereira.com/wp-content/uploads/2016/11/Adela-Pereira-bio-pequeno.png' width = '150' height = '' alt = 'Adela Pereira Biografia'> ");
+$("div#text-2 .textwidget img").css({ // put picture on the center
+	    'display': 'block',
+    	'margin': '0 auto',
+    	'font-family': 'Montserrat',
+		});
+$("div#text-2 .textwidget div").attr('id', 'add_photo_ade'); //add id to div to be added the title h4
+//var htmlToAdd = '<h4 class="widget-title" style="text-align: center;">Hola. Soy Adela Pereira</h4>';
+var objectToAdd = $("div#text-2 h4.widget-title"); //title to add
+//$("#add_photo_ade").prepend(htmlToAdd);
+objectToAdd.detach(); //delete old title
+$("#add_photo_ade").prepend(objectToAdd).prepend("<p> </p>").css({ 
+    	'font-family': 'Montserrat',
+		});; //add new title and set the font-family
+
+var biographyObject = $("div#text-2");
+$(".sidebar-section.sidebar-form").prepend(biographyObject);
+}); 
+
+</script>
+
+
+
+
 
 
 
