@@ -5,7 +5,9 @@
 <script>
 $(document).ready(function(){
 var optimeWidth = $("div.op_signup_form.op-signup-style-style5").outerWidth();
+console.log("optimeWidth = " + optimeWidth);
 var adsBlockWidth = $(".sidebar-ads img:first-child").width();
+console.log("adsBlockWidth = " + adsBlockWidth);
 var difference = (optimeWidth - adsBlockWidth)/2;
 $(".sidebar-ads a img").css({ 'padding-left': difference + 'px'}); //align to center
 $("div#categories-3").css({ // put the categories 
@@ -14,13 +16,18 @@ $("div#categories-3").css({ // put the categories
 		});
 var categoriesWidth = $("div#categories-3").outerWidth();
 var difference2 = (categoriesWidth - adsBlockWidth)/2;
+console.log("difference2 = " + difference2);
 $("div#categories-3").css({ //align the widget with adds
 		    'padding-left': difference2 + 'px'
 		});
 $(".widget h4, .widget_categories li").css({ //center texts
 		    'text-align': 'center'
 		});
-
+$("div#categories-3, .sidebar-section.sidebar-ads.single-ad").css({ // put picture on the center
+			    'display': 'block',
+		    	'margin': '0 auto',
+		    	//'padding-left':'20px'
+				});
 }); 
 
 </script>
@@ -61,7 +68,7 @@ if (widthOfWindow > 770) {
 			    'padding-left': difference2 + 'px'
 			});
 	//add image
-	$("div#text-2 .textwidget").prepend("<img src = 'http://localhost/adelapereira.com/wp-content/uploads/2016/11/Adela-Pereira-bio-pequeno.png' width = '150' height = '' alt = 'Adela Pereira Biografia'> ");
+	$("div#text-2 .textwidget").prepend("<img src = 'http://adelapereira.com/wp-content/uploads/2016/11/Adela-Pereira-bio-pequeno2.png' width = '150' height = '' alt = 'Adela Pereira Biografia'> ");
 	$("div#text-2 .textwidget img").css({ // put picture on the center
 		    'display': 'block',
 	    	'margin': '0 auto',
@@ -83,14 +90,14 @@ else { //for mobiles and tablets
 		$("div#categories-3").css({ // put picture on the center
 			    'display': 'block',
 		    	'margin': '0 auto',
-		    	'padding-left':'20px'
+		    	//'padding-left':'20px'
 				});
 		$(".sidebar-ads a img").css({ // put picture on the center
 			    'display': 'block',
 		    	'margin': '0 auto',
 				});
 			//add image
-	$("div#text-2 .textwidget").prepend("<img src = 'http://localhost/adelapereira.com/wp-content/uploads/2016/11/Adela-Pereira-bio-pequeno.png' width = '150' height = '' alt = 'Adela Pereira Biografia'> ");
+	$("div#text-2 .textwidget").prepend("<img src = 'http://adelapereira.com/wp-content/uploads/2016/11/Adela-Pereira-bio-150.png' width = '150' height = '' alt = 'Adela Pereira Biografia'> ");
 	$("div#text-2 .textwidget img").css({ // put picture on the center
 		    'display': 'block',
 	    	'margin': '0 auto',
@@ -113,6 +120,34 @@ else { //for mobiles and tablets
 
 </script>
 
+
+// remove check icons from iframe when the content is form the same domain.
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+
+	var iFr = $('iframe');
+	iFr.load(function() {
+		iFr.attr('id','something');
+       	iFr.contents().find('h1').css({'display' : 'none'});
+       	//iFr.contents().find('h1').remove();
+      	//$('something').contents().find('h1').hide();
+	});
+
+
+	var f = $("iframe");
+	f.load(function(){
+        f.find(' h1').css({'display' : 'none'});
+        //f.find('h1').hide();
+        //f.contents().find('h1').remove();
+	});
+
+
+}); //end of ready function
+
+</script>
 
 
 
