@@ -150,6 +150,20 @@ $(document).ready(function(){
 </script>
 
 
+//scroll screen from video thumbnail to video div and hide loading error
+
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+$(document).ready(function(){
+
+  $(".ui-loader.ui-corner-all.ui-body-a.ui-loader-default").hide(); 
+
+  $("div#le_body_row_3_col_1_el_1 img.full-width").on("tap",function(){
+    $('html, body').animate({ scrollTop: $("div#wistia-kv8empd3ag-1").offset().top }, 500);
+    });
+});
+</script>
 
 
 
