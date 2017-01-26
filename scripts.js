@@ -160,12 +160,37 @@ $(document).ready(function(){
   $(".ui-loader.ui-corner-all.ui-body-a.ui-loader-default").hide(); 
 
   $("div#le_body_row_3_col_1_el_1 img.full-width").on("tap",function(){
-    $('html, body').animate({ scrollTop: $("div#wistia-kv8empd3ag-1").offset().top }, 500);
+    //$('html, body').animate({ scrollTop: $("div#wistia-kv8empd3ag-1").offset().top }, 500);
+    $('html, body').animate({ scrollTop: $("div#le_body_row_4_col_1_el_1 ").offset().top }, 500);
     });
 });
 </script>
 
 
+//add id for scrolling till spacer with .quiero-matricularme-1 class
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script>
+$(document).ready(function(){
+
+$('div#le_body_row_30').attr('id', 'quiero-matricularme-go');
+});
+</script>
+
+
+//hide on tablets and mobiles the enrolment boxes enroll-box-mobile
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	if ($(window).width() > 770) {
+		$(".enroll-box-mobile").hide();
+	};
+});
+</script>
 
 
 
